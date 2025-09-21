@@ -1,0 +1,37 @@
+# -------------------------------
+# Example 1: Basic Greeting
+# -------------------------------
+name = input("Enter your name: ")
+greeting = f"Hello, {name}! Nice to meet you."
+print(greeting)
+
+# -------------------------------
+# Example 2: Age Information
+# -------------------------------
+age = input("Enter your age: ")
+age_info = f"You mentioned that you are {age} years old."
+print(age_info)
+
+# -------------------------------
+# Example 3: Favorite Color
+# -------------------------------
+color = input("What's your favorite color? ")
+color_message = f"Wow, {color} is a really lovely choice!"
+print(color_message)
+
+# -------------------------------
+# Example 4: Simple Math with Input
+# (Note: input() gives strings, so we convert to int for calculation)
+# -------------------------------
+num1 = int(input("Enter a number: "))
+num2 = int(input("Enter another number: "))
+sum_message = f"The sum of {num1} and {num2} is {num1 + num2}."
+print(sum_message)
+
+# -------------------------------
+# Example 5: Mini Profile
+# -------------------------------
+hobby = input("What's one of your hobbies? ")
+city = input("Which city do you live in? ")
+profile = f"{name} is {age} years old, enjoys {hobby}, and lives in {city}."
+print(profile)
