@@ -1,0 +1,192 @@
+# 1. capitalize() → First letter uppercase, rest lowercase
+"python".capitalize()        # "Python"
+
+# 2. casefold() → Aggressive lowercase (good for case-insensitive compares)
+"Straße".casefold()          # "strasse"
+
+# 3. center(width, fillchar) → Pad string to center it
+"cat".center(7, "-")         # "--cat--"
+
+# 4. count(sub) → Count occurrences
+"banana".count("na")         # 2
+
+# 5. encode(encoding) → Encode to bytes
+"hello".encode("utf-8")      # b'hello'
+
+# 6. endswith(suffix) → Check if string ends with given text
+"python".endswith("on")      # True
+
+# 7. expandtabs(tabsize) → Replace tabs with spaces
+"1\t2\t3".expandtabs(4)      # "1   2   3"
+
+# 8. find(sub) → Lowest index of substring (or -1 if not found)
+"banana".find("na")          # 2
+
+# 9. format(...) → Format with placeholders
+"{} + {} = {}".format(2, 3, 5)   # "2 + 3 = 5"
+
+# 10. format_map(mapping) → Format with dict directly
+"{x}, {y}".format_map({"x": 1, "y": 2})   # "1, 2"
+
+# 11. index(sub) → Like find(), but raises error if not found
+"banana".index("na")         # 2
+
+# 12. isalnum() → Only letters/numbers?
+"abc123".isalnum()           # True
+
+# 13. isalpha() → Only letters?
+"abc".isalpha()              # True
+
+# 14. isascii() → All characters ASCII?
+"hello".isascii()            # True
+
+# 15. isdecimal() → Only decimal digits?
+"123".isdecimal()            # True
+
+# 16. isdigit() → Only digits (includes Unicode digits)
+"²3".isdigit()               # True
+
+# 17. isidentifier() → Valid Python identifier?
+"var_1".isidentifier()       # True
+
+# 18. islower() → All letters lowercase?
+"hello".islower()            # True
+
+# 19. isnumeric() → All numeric (includes fractions, Roman numerals, etc.)
+"Ⅳ".isnumeric()              # True
+
+# 20. isprintable() → Only printable chars?
+"hello!".isprintable()       # True
+
+# 21. isspace() → Only spaces/whitespace?
+"   ".isspace()              # True
+
+# 22. istitle() → Titlecase? (Words Capitalized)
+"Hello World".istitle()      # True
+
+# 23. isupper() → All letters uppercase?
+"HELLO".isupper()            # True
+
+# 24. join(iterable) → Join sequence with separator
+",".join(["a", "b", "c"])    # "a,b,c"
+
+# 25. ljust(width, fillchar) → Left justify
+"cat".ljust(6, ".")          # "cat..."
+
+# 26. lower() → All lowercase
+"HELLO".lower()              # "hello"
+
+# 27. lstrip(chars) → Remove from left
+"   hi".lstrip()             # "hi"
+
+# 28. maketrans / translate → Mapping replacements
+table = str.maketrans({"a":"1", "b":"2"})
+"abc".translate(table)       # "12c"
+
+# 29. partition(sep) → Split into (before, sep, after)
+"apple|pear".partition("|")  # ('apple', '|', 'pear')
+
+# 30. removeprefix(prefix) → Remove prefix if present
+"unhappy".removeprefix("un") # "happy"
+
+# 31. removesuffix(suffix) → Remove suffix if present
+"friendly".removesuffix("ly") # "friend"
+
+# 32. replace(old, new) → Replace all occurrences
+"banana".replace("na", "NO") # "baNONO"
+
+# 33. rfind(sub) → Rightmost index (or -1 if not found)
+"banana".rfind("na")         # 4
+
+# 34. rindex(sub) → Like rfind(), but raises error if not found
+"banana".rindex("na")        # 4
+
+# 35. rjust(width, fillchar) → Right justify
+"cat".rjust(6, ".")          # "...cat"
+
+# 36. rpartition(sep) → Like partition but from right
+"apple|pear|orange".rpartition("|")  # ('apple|pear', '|', 'orange')
+
+# 37. rsplit(sep, maxsplit) → Split from the right
+"1,2,3,4".rsplit(",", 1)     # ['1,2,3', '4']
+
+# 38. rstrip(chars) → Remove from right side
+"hello!!!".rstrip("!")       # "hello"
+
+# 39. split(sep, maxsplit) → Split left to right
+"1,2,3".split(",")           # ['1','2','3']
+
+# 40. splitlines(keepends) → Split by line breaks
+"line1\nline2".splitlines()  # ['line1','line2']
+
+# 41. startswith(prefix) → Check start
+"python".startswith("py")    # True
+
+# 42. strip(chars) → Remove from both ends
+"---hi---".strip("-")        # "hi"
+
+# 43. swapcase() → Flip case
+"HeLLo".swapcase()           # "hEllO"
+
+# 44. title() → Convert to Title Case
+"hello world".title()        # "Hello World"
+
+# 45. translate(table) → Apply mapping table (see #28)
+"abc".translate({"a":"x"})   # "abc" (needs proper maketrans)
+
+# 46. upper() → All uppercase
+"hello".upper()              # "HELLO"
+
+# 47. zfill(width) → Pad with zeros on the left
+"7".zfill(3)                 # "007"
+
+#=============================================
+#                   LISTS
+#=============================================
+
+
+# 1. append(x) → Add an item at the end
+nums = [1, 2, 3]
+nums.append(4)        # [1, 2, 3, 4]
+
+# 2. clear() → Remove all items
+nums = [1, 2, 3]
+nums.clear()          # []
+
+# 3. copy() → Shallow copy of the list
+nums = [1, 2, 3]
+clone = nums.copy()   # clone is [1, 2, 3]
+
+# 4. count(x) → Count how many times x appears
+nums = [1, 2, 2, 3, 2]
+nums.count(2)         # 3
+
+# 5. extend(iterable) → Add all items from another iterable
+nums = [1, 2]
+nums.extend([3, 4])   # [1, 2, 3, 4]
+
+# 6. index(x[, start[, end]]) → Find first index of x
+nums = [10, 20, 30, 20]
+nums.index(20)        # 1
+
+# 7. insert(i, x) → Insert at a position
+nums = [1, 3, 4]
+nums.insert(1, 2)     # [1, 2, 3, 4]
+
+# 8. pop([i]) → Remove and return item (default is last)
+nums = [1, 2, 3]
+nums.pop()            # returns 3 → nums is [1, 2]
+nums.pop(0)           # returns 1 → nums is [2]
+
+# 9. remove(x) → Remove first occurrence of x
+nums = [1, 2, 3, 2]
+nums.remove(2)        # removes first 2 → [1, 3, 2]
+
+# 10. reverse() → Reverse the list in place
+nums = [1, 2, 3]
+nums.reverse()        # [3, 2, 1]
+
+# 11. sort(key=None, reverse=False) → Sort in place
+nums = [3, 1, 2]
+nums.sort()           # [1, 2, 3]
+nums.sort(reverse=True) # [3, 2, 1]
