@@ -1,0 +1,260 @@
+
+#^========================================
+#&          📖 DICTIONARY
+#^========================================
+ # * Imagine a Dictionary 📖 as a vault system 🏦:
+# * - Each *key* 🔑 is like the password to a vault.
+# * - Each *value* 💰 is the actual treasure stored inside.
+# * - We can add treasures, remove them, copy whole vaults,
+# *   or even peek at what’s inside!
+# * Let’s explore each command...
+
+# *---------------------------------------
+# * CLEAR
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+car.clear()   # * 🧹 CLEAR = wipe the vault clean completely! Nothing survives.
+print(car)    # * {}
+
+# *----------------------------------------
+# * COPY
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+x = car.copy()  # * 📋 COPY makes an independent clone – like building a twin vault 🔮
+print(x)
+
+# *---------------------------------------
+# * FROMKEYS
+x = ('key1', 'key2', 'key3')   
+# * Here we just have a tuple of keys 🗝️🗝️🗝️
+thisdict = dict.fromkeys(x)  
+# * FROMKEYS will create a dictionary with these keys set to default "None" (🏚️ empty vault rooms).
+print(thisdict)
+
+# *---------------------------------------
+# * GET
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+x = car.get('price', 15000)  
+# * GET() tries to unlock the "price" vault. If the key doesn’t exist, it politely gives you a backup default (15000 💵).
+print(x)
+
+# *---------------------------------------
+# * ITEMS
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+x = car.items()  
+# * ITEMS lists all vaults 🔑💰 together. Think of it as a catalog 📜 of “key ➡️ value” pairs.
+car['year'] = 2018  # * 🔄 This list updates live if original vault changes.
+print(x)
+
+# *---------------------------------------
+# * POP
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+car.pop('model')  
+# * POP removes one vault with a specific key 🔑❌ (and gives you the treasure if you store it).
+print(car)
+
+# *---------------------------------------
+# * KEYS
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+x = car.keys()  
+# * KEYS() gives you just the list of all passwords 🔑 without showing the treasures.
+car['color'] = 'white'  # * 🆕 Adding a new vault automatically changes the key list.
+print(x)
+
+# *---------------------------------------
+# * POPITEM
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+car.popitem()
+# * POPITEM removes the *last* added vault (post-Python 3.7), convenient if you want "the newest stuff out" 📦
+print(car)
+
+# *---------------------------------------
+# * SETDEFAULT
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+x = car.setdefault('color', 'white')
+# * SETDEFAULT ensures a vault exists – if not, it creates one with the default treasure 🎁.
+# * If it already exists, it just politely shows what’s inside (no overwrite).
+print(x)
+
+# *---------------------------------------
+# * UPDATE
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+car.update({'color': 'White'})
+# * UPDATE = patch vault 🛠️ … You can add new treasures or replace old ones.
+print(car)
+
+# *---------------------------------------
+# * VALUES
+car = {
+  'brand': 'Ford',
+  'model': 'Mustang',
+  'year': 1964
+}
+x = car.values()
+# * VALUES() shows just the treasures 💎 without their lock codes.
+car['year'] = 2018
+print(x)
+
+
+#^========================================
+#*             🗿 TUPLES
+#^========================================
+
+# * Tuples are like ancient stone tablets 📜🗿:
+# * - Once written, the information cannot be changed (immutable).
+# * - You use them when you want values to be *frozen in time* (safeguarded).
+
+# *---------------------------------------
+# * COUNT
+tup = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5)
+x = tup.count(5)
+# * COUNT() = tells you how many times a specific number 🔢 appears in the tuple.
+print(x)
+
+# *---------------------------------------
+# * INDEX
+tup = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5)
+x = tup.index(8)
+# * INDEX() = shows you the first position 📍 where a value is carved on the stone.
+print(x)
+
+# * And that’s all tuples can do directly! ⛔
+# * Why? Because immutability = protection. They’re made to store unchangeable facts.
+
+
+#^========================================
+#*             🍎 SETS
+#^========================================
+
+
+# * Sets are like fruit baskets 🍓🍎🍌:
+# * - No duplicate fruits allowed. 🍏❌🍏
+# * - The order doesn’t matter, only uniqueness.
+# * - Very powerful for math-like operations (union, intersection).
+
+# *---------------------------------------
+# * ADD
+fruits = {'apple', 'banana', 'cherry'}
+fruits.add('orange')  
+# * ADD = toss a new fruit 🍊 into the basket.
+print(fruits)
+
+# * CLEAR
+fruits = {'apple', 'banana', 'cherry'}
+fruits.clear()  
+# * CLEAR = dump all fruits out, leaving an empty basket 🧺❌
+print(fruits)
+
+# * COPY
+fruits = {'apple', 'banana', 'cherry'}
+x = fruits.copy()  
+# * COPY = make a brand new basket with the same fruits 🍎🍌🍒
+print(x)
+
+# * DIFFERENCE
+x = {'apple', 'banana', 'cherry'}
+y = {'google', 'microsoft', 'apple'}
+z = x.difference(y)
+# * DIFFERENCE = what does x-basket have that y doesn’t? 🕵️‍♂️
+print(z)
+
+# * DIFFERENCE_UPDATE
+x = {'apple', 'banana', 'cherry'}
+y = {'google', 'microsoft', 'apple'}
+x.difference_update(y)
+# * DIFFERENCE_UPDATE = actually remove overlapping fruits from x permanently 🍏✂️
+print(x)
+
+# * DISCARD
+fruits = {'apple', 'banana', 'cherry'}
+fruits.discard('banana')
+# * DISCARD = remove a fruit if present 🍌❌. If fruit is missing, it won’t complain 🚫😤
+print(fruits)
+
+# * INTERSECTION
+x = {'apple', 'banana', 'cherry'}
+y = {'google', 'microsoft', 'apple'}
+z = x.intersection(y)
+# * INTERSECTION = which fruits do both friends have? 🍏🤝🍏
+print(z)
+
+# * INTERSECTION_UPDATE
+x = {'apple', 'banana', 'cherry'}
+y = {'google', 'microsoft', 'apple'}
+x.intersection_update(y)
+# * Reduce x so it only contains what’s common to y 🔄
+print(x)
+
+# * ISDISJOINT
+x = {'apple', 'banana', 'cherry'}
+y = {'google', 'microsoft', 'dell'}
+z = x.isdisjoint(y)
+# * TRUE if baskets share 0 fruits between them ❌🍎🍏
+print(z)
+
+# * ISSUBSET
+x = {'a', 'b', 'c'}
+y = {'f', 'e', 'd', 'c', 'b'}
+z = x.issubset(y)
+# * SUBSET = check if x-basket fits completely inside y-basket 📦
+print(z)
+
+# * ISSUPERSET
+x = {'f', 'e', 'd', 'c', 'b', 'a'}
+y = {'a', 'b', 'c'}
+z = x.issuperset(y)
+# * SUPERSET = check if x is big enough to carry all of y (y is inside x) 💪
+print(z)
+
+# * POP
+fruits = {'apple', 'banana', 'cherry'}
+fruits.pop()
+# * POP removes a *random* fruit 🍀 because sets are unordered.
+print(fruits)
+
+# * REMOVE
+fruits = {'apple', 'banana', 'cherry'}
+fruits.remove('banana')
+# * REMOVE = like discard, but if fruit doesn’t exist, Python screams 🚨
+print(fruits)
+
+# * UNION
+x = {'apple', 'banana', 'cherry'}
+y = {'google', 'microsoft', 'apple'}
+z = x.union(y)
+# * UNION = combine baskets together 🧺➕🧺 = one big basket without duplicates 🎉
+print(z)
