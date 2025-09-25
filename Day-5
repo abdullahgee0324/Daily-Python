@@ -1,0 +1,33 @@
+# 🎓 Student Grade Tracker - Using strings, lists, tuples, sets, and dictionaries
+
+# Dictionary to store students and their grades (list of tuples: (subject, grade))
+gradebook = {
+    "Alice": [("Math", 88), ("English", 92), ("History", 79)],
+    "Bob":   [("Math", 75), ("English", 85), ("Science", 90)],
+    "Carol": [("Math", 92), ("English", 81), ("History", 87), ("Science", 95)]
+}
+
+# 1. Use a set to list all unique subjects across students
+subjects = set()
+for grades in gradebook.values():
+    for subject, _ in grades:
+        subjects.add(subject)
+
+print("📘 Subjects in this semester:", subjects)
+
+# 2. Loop through each student and calculate average score
+for student, grades in gradebook.items():
+    total = 0
+    for subject, score in grades:
+        total += score
+    avg = total / len(grades)
+    print(f"{student} has an average score of {avg:.2f}")
+
+# 3. Store honor roll students (average >= 90) in a list
+honor_roll = []
+for student, grades in gradebook.items():
+    avg = sum(score for _, score in grades) / len(grades)
+    if avg >= 90:
+        honor_roll.append(student)
+
+print("🏅 Honor Roll:", honor_roll)
