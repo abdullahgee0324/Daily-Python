@@ -1,27 +1,168 @@
-🚀 Day 6 – Mastering Conditions & Loops
-"Day 6 of my Python journey 🐍"
+x = 10
 
-Today was all about giving Python its “decision-making power” and its ability to repeat tasks intelligently with conditions and loops.
+# * This checks if x is greater than 5.
+# * Since x = 10, the condition is True, so the code inside runs.
+if x > 5:
+    print("1. x is greater than 5")
 
-🔑 What I practiced:
 
-if / elif / else → teaching Python how to choose paths.
-Nested conditions → decisions inside decisions.
-Logical operators (and, or, not) → combining checks.
-Ternary operator (compact one-liner decisions).
-For loops → repeating through lists, strings, or ranges.
-Break & Continue → controlling the flow of a loop.
-Nested loops → pairing adjectives with fruits (fun example!).
-Using pass → placeholders for logic I’ll add later.
-✨ Reflections:
+x = 3
 
-Writing conditions felt like giving Python a little logic engine—it starts to “decide” rather than just follow one straight line.
-Loops showed me how powerful it is to automate repetition—it’s like the difference between copy-pasting and letting Python do the heavy lifting.
-Combining them together (loops + conditions) feels like unlocking a new superpower.
-👉 My question to the community:
-When you were just starting, what exercises or mini-projects helped you feel confident with conditions and loops? I want to sharpen this skill before I dive into building bigger projects tomorrow.
+# * Here we check if x > 5. (x = 3, so it’s not.)
+# * Because the first condition is False, the "else" block runs instead.
+if x > 5:
+    print("2. x is greater than 5")
+else:
+    print("2. x is not greater than 5")
 
-I’ve uploaded today’s full code + notes to my GitHub repo:
-🔗 [Daily Python Repo]
 
-Every step forward makes me realize: Python isn’t just about syntax, it’s about learning how to think like a programmer. 🚀
+# * Let's take input from the user 🎤
+x = (input("Enter The First Number:"))
+y = (input("Enter One More Number:"))
+
+# * .isdigit() checks if the input is only digits (numbers, no letters).
+# * If either input is not a number, we ask again politely and exit.
+if not x.isdigit() or not y.isdigit():
+    print("Please enter valid numbers.")
+    exit()
+
+# * NOTE ⚠️: At this point x and y are still STRINGS. 
+# * Comparing strings works differently ("20" < "5" because strings check alphabetically).
+# * Ideally, you should convert to int: x = int(x), y = int(y).
+if x > y:
+    print(f" {x} is greater than {y}")
+elif x == y:
+    print(f" {x} is equal to {y}")
+else:
+    print(f"{x} is less then {y}")
+
+
+x = 2
+
+# * if/elif/else chain: only one of these blocks will execute.
+if x > 5:
+    print("4. x is greater than 5")
+elif x == 5:
+    print("4. x is equal to 5")
+else:
+    print("4. x is less than 5")
+
+
+x = 10
+y = 20
+
+# * Nested if = an if statement inside another.
+# * First check: x > 5 ✅
+# * Inside it, also check y > 15 ✅
+if x > 5:
+    if y > 15:
+        print("5. x > 5 and y > 15")
+
+
+x = 10
+y = 5
+
+# * Nested if again:
+# * Outer condition: x > 5 ✅
+# * Inner condition: y > 5 ❌ so it goes to the else.
+if x > 5:
+    if y > 5:
+        print("6. x > 5 and y > 5")
+    else:
+        print("6. x > 5 and y <= 5")
+
+
+x = 10
+y = 20
+
+# * AND: both conditions must be True.
+if x > 5 and y > 15:
+    print("7. Both conditions are true")
+
+# * OR: at least one condition must be True.
+if x > 5 or y > 25:
+    print("7. At least one condition is true")
+
+
+x = 5
+
+# * This is a "ternary operator" (short if-else).
+# * Check if x is even → if True: "Even", else: "Odd".
+result = "Even" if x % 2 == 0 else "Odd"
+
+print(f"8. {x} is {result}")
+
+
+is_logged_in = False
+
+# * NOT = negation. If is_logged_in is False, NOT False = True.
+# * So this prints "User is not logged in".
+if not is_logged_in:
+    print("9. User is not logged in")
+
+
+x = 15
+
+# * Compact way to check if x is between 10 and 20.
+# * Both conditions (x > 10 AND x < 20) must be True.
+if 10 < x < 20:
+    print("10. x is between 10 and 20")
+
+
+x = 10
+
+# * 'pass' = a placeholder. Do nothing for now, just skip.
+if x > 5:
+    pass
+
+print("11. pass used (no output expected)")
+
+
+fruits = ['apple', 'banana', 'cherry']
+
+# * A simple for-loop that prints every fruit one by one.
+for x in fruits:
+  print(x)
+
+
+fruits = ['apple', 'banana', 'cherry']
+
+# * This prints fruit names, but if the fruit is 'banana', the loop BREAKS (stops).
+for x in fruits:
+ print(x)
+ if x == 'banana':
+   break
+
+
+fruits = ['apple', 'banana', 'cherry']
+
+# * This prints fruits, but if the fruit == 'banana', it uses CONTINUE
+# * (skip the rest of this loop and move to the next item).
+for x in fruits:
+ print(x)
+ if x == 'banana':
+   continue
+ print(x)  # * Notice how this line doesn’t run when x == 'banana'
+
+
+adj = ['red', 'big', 'tasty']
+fruits = ['apple', 'banana', 'cherry']
+
+# * Nested loops:
+# * Outer loop: adjectives (red, big, tasty)
+# * Inner loop: fruits → matches each adj with every fruit 💃
+for x in adj:
+  for y in fruits:
+    print(x, y)
+
+
+# * range(n) → gives numbers from 0 to n-1
+# * So this prints: 0,1,2,3,4,5
+for x in range(6):
+ print(x)
+
+
+# * A string is also a sequence we can loop through.
+# * This prints each character of "banana" one by one.
+for x in 'banana':
+  print(x)
